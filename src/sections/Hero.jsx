@@ -23,7 +23,7 @@ export default function Hero() {
               Open to software engineering opportunities
             </motion.div>
 
-            <motion.div {...fadeUp(0.1)} className="inline-flex items-center gap-2 muted-text text-sm mb-6">
+            <motion.div {...fadeUp(0.1)} className="location-row mb-6">
               <MapPin size={15} />
               <span>{data.personal.location}</span>
             </motion.div>

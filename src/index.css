@@ -178,6 +178,15 @@ button {
   color: var(--muted);
 }
 
+.location-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
 .accent-text {
   color: var(--accent-strong);
 }
@@ -329,6 +338,14 @@ button {
   background: transparent;
   border: 0;
   cursor: pointer;
+}
+
+.brand-name {
+  display: block;
+  max-width: 8.5rem;
+  white-space: normal;
+  text-align: left;
+  line-height: 1.1;
 }
 
 .brand-badge {
@@ -496,5 +513,15 @@ button {
 
   .surface-card {
     border-radius: 1.35rem;
+  }
+
+  .brand-mark {
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .brand-name {
+    max-width: 6.75rem;
   }
 }

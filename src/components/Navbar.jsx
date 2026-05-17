@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Github, Linkedin, Menu, Moon, Sun, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { data } from '../data'
 
@@ -32,7 +32,7 @@ export default function Navbar({ theme, onToggleTheme }) {
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
           <button onClick={() => scrollTo('about')} className="brand-mark" aria-label="Go to top">
             <span className="brand-badge">AP</span>
-            <span className="hidden sm:block text-sm font-medium tracking-[0.18em] uppercase">
+            <span className="brand-name text-xs sm:text-sm font-medium tracking-[0.14em] sm:tracking-[0.18em] uppercase">
               Aditya Panda
             </span>
           </button>
@@ -64,6 +64,7 @@ export default function Navbar({ theme, onToggleTheme }) {
               rel="noopener noreferrer"
               className="button-secondary hidden sm:inline-flex"
             >
+              <Linkedin size={16} />
               LinkedIn
             </a>
 
@@ -98,11 +99,21 @@ export default function Navbar({ theme, onToggleTheme }) {
                 </button>
               ))}
               <a
+                href={data.personal.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-nav-link inline-flex items-center gap-2"
+              >
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
+              <a
                 href={data.personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mobile-nav-link"
+                className="mobile-nav-link inline-flex items-center gap-2"
               >
+                <Github size={16} />
                 GitHub
               </a>
             </div>
