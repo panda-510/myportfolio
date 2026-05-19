@@ -13,8 +13,8 @@ export default function Skills() {
     <section id="skills" className="section-shell">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="section-header">
-          <p className="section-kicker">Skills</p>
-          <h2 className="section-title">Technical strengths, kept readable.</h2>
+          <p className="section-kicker">Core Stack</p>
+          <h2 className="section-title">Technologies I work with regularly.</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
@@ -28,17 +28,11 @@ export default function Skills() {
               className="surface-card p-5"
             >
               <p className="section-kicker">{title}</p>
-              <div className="space-y-4 mt-5">
+              <div className="flex flex-wrap gap-2 mt-5">
                 {data.skills[key].map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex items-center justify-between text-sm mb-2">
-                      <span>{skill.name}</span>
-                      <span className="muted-text">{skill.level}%</span>
-                    </div>
-                    <div className="progress-track">
-                      <div className="progress-fill" style={{ width: `${skill.level}%` }} />
-                    </div>
-                  </div>
+                  <span key={skill.name} className="tag-chip skill-chip">
+                    {skill.name}
+                  </span>
                 ))}
               </div>
             </motion.div>

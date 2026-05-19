@@ -7,7 +7,7 @@ export const data = {
     phone: '+91-9699924623',
     location: 'Mumbai, India',
     linkedin: 'https://www.linkedin.com/in/aditya-panda-520841215/',
-    github: 'https://github.com/Adi512',
+    github: 'https://github.com/panda-510',
     summary:
       'I build reliable product experiences across payment infrastructure, internal tooling, and AI-assisted systems. My work has focused on faster merchant onboarding, lower support load, and practical features that teams can actually ship.',
     taglines: [

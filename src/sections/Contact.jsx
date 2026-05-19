@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, Phone } from 'lucide-react'
+import { Check, Copy, Github, Linkedin, Mail, Phone } from 'lucide-react'
 import { data } from '../data'
 
 const links = [
@@ -17,7 +18,7 @@ const links = [
   },
   {
     label: 'GitHub',
-    value: 'github.com/Adi512',
+    value: 'github.com/panda-510',
     href: data.personal.github,
     icon: Github,
   },
@@ -30,6 +31,18 @@ const links = [
 ]
 
 export default function Contact() {
+  const [copied, setCopied] = useState('')
+
+  const handleCopy = async (label, value) => {
+    try {
+      await navigator.clipboard.writeText(value)
+      setCopied(label)
+      window.setTimeout(() => setCopied(''), 1800)
+    } catch {
+      setCopied('')
+    }
+  }
+
   return (
     <section id="contact" className="section-shell pb-20">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
@@ -49,25 +62,41 @@ export default function Contact() {
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-8">
             {links.map((link, index) => {
               const Icon = link.icon
+              const copiedThis = copied === link.label
 
               return (
-                <motion.a
+                <motion.div
                   key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: index * 0.06 }}
-                  className="surface-subcard p-4 hover:-translate-y-1 transition-transform duration-200"
+                  className="surface-subcard contact-card p-4 hover:-translate-y-1 transition-transform duration-200"
                 >
-                  <div className="contact-icon">
-                    <Icon size={18} />
+                  <div className="flex items-start justify-between gap-3">
+                    <a
+                      href={link.href}
+                      target={link.href.startsWith('http') ? '_blank' : undefined}
+                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="min-w-0 flex-1"
+                    >
+                      <div className="contact-icon">
+                        <Icon size={18} />
+                      </div>
+                      <p className="muted-text text-sm mt-4">{link.label}</p>
+                      <p className="text-sm sm:text-base font-medium mt-1 contact-value">{link.value}</p>
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(link.label, link.href.startsWith('http') ? link.href : link.value)}
+                      className="copy-mini-button"
+                      aria-label={`Copy ${link.label}`}
+                    >
+                      {copiedThis ? <Check size={14} /> : <Copy size={14} />}
+                    </button>
                   </div>
-                  <p className="muted-text text-sm mt-4">{link.label}</p>
-                  <p className="text-sm sm:text-base font-medium mt-1 break-all">{link.value}</p>
-                </motion.a>
+                </motion.div>
               )
             })}
           </div>

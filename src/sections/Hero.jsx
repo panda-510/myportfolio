@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
 import { data } from '../data'
 import { useTypewriter } from '../hooks/useTypewriter'
 
@@ -18,14 +18,18 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-5 sm:px-6 pt-28 pb-10">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
           <div>
-            <motion.div {...fadeUp(0.05)} className="eyebrow-pill mb-6">
-              <span className="status-dot" />
-              Open to software engineering opportunities
-            </motion.div>
+            <motion.div {...fadeUp(0.05)} className="hero-pill-row mb-6">
+              <div className="eyebrow-pill">
+                <span className="status-dot" />
+                Open to software engineering opportunities
+              </div>
 
-            <motion.div {...fadeUp(0.1)} className="location-row mb-6">
-              <MapPin size={15} />
-              <span>{data.personal.location}</span>
+              <div className="location-row">
+                <span className="location-icon-wrap">
+                  <MapPin size={14} />
+                </span>
+                <span>{data.personal.location}</span>
+              </div>
             </motion.div>
 
             <motion.h1
@@ -89,7 +93,6 @@ export default function Hero() {
                     <p className="stat-value">{stat.value}</p>
                     <p className="muted-text text-sm">{stat.label}</p>
                   </div>
-                  <ArrowRight size={18} className="accent-text" />
                 </div>
               ))}
             </div>
