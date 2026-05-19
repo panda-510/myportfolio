@@ -204,7 +204,6 @@ button {
 .location-row > span {
   display: inline-flex;
   align-items: center;
-  height: 100%;
 }
 
 .location-icon-wrap {
@@ -402,18 +401,6 @@ button {
   color: white;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
-}
-
-[data-theme='dark'] .brand-badge {
-  color: #000000;
-}
-
-[data-theme='dark'] .button-primary {
-  color: #000000;
-}
-
-[data-theme='dark'] .button-secondary {
-  color: #ffffff;
 }
 
 .navbar-shell {
