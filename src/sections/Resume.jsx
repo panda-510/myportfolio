@@ -18,7 +18,8 @@ export default function Resume() {
               <p className="section-kicker">Resume</p>
               <h2 className="section-title">Download my latest resume.</h2>
               <p className="body-copy mt-4">
-Want the complete picture? The PDF version includes detailed information about my professional experience, projects, skills, and educational background.              </p>
+                Want the complete picture? The PDF version includes detailed information about my professional experience, projects, skills, and educational background.
+              </p>
             </div>
 
             <div className="surface-subcard resume-download-card p-5 sm:p-6">

@@ -8,7 +8,7 @@ export const data = {
     location: 'Mumbai, India',
     linkedin: 'https://www.linkedin.com/in/aditya-panda-520841215/',
     github: 'https://github.com/panda-510',
-    resume: '/Aditya_Panda_Resume.pdf',
+    resume: `${import.meta.env.BASE_URL}Aditya_Panda_Resume.pdf`,
     summary:
       'I build reliable product experiences across payment infrastructure, internal tooling, and AI-assisted systems. My work has focused on faster merchant onboarding, lower support load, and practical features that teams can actually ship.',
     taglines: [
